@@ -1,4 +1,5 @@
 # Reconhecimento - Deteção de sistemas oprativos
+***
 
 **Na fase de reconhecimento, a deteção de sistemas operacionais é uma etapa crucial para 
 entender a topologia da rede alvo e identificar potenciais vulnerabilidades específicas do 
@@ -25,4 +26,20 @@ implementação de políticas de segurança.**
 demonstrações educacionais de como podemos explorar sistemas através desses serviços, 
 criando assim um ambiente de estudos para praticar as nossas competências em 
 segurança informática.**
+
+
+**![Exemplo](https://github.com/Estevan1998/Sistemas-de-an-lise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-05%20172709.png)**
+***
+## 1- N MAP
+
+**Conforme ilustrado na figura abaixo,  usamos a ferramenta NMAP com o comando "nmap sP".**
+
+**É utilizado para realizar um ping sweep(é um método que pode estabelecer um intervalo de endereços IP que são mapeados para hosts ativos) na rede específica,onde "IP" é o endereço IP da rede que desejamos verificar. Esse comando envia um pacote ICMP Echo Request para cada IP na faixa especificada e aguarda pelas respostas para determinar quais hosts estão ativos na rede.**
+
+**No entanto, é importante ressaltar que esse 
+comando pode ser considerado intrusivo, pois ele envia pacotes para os dispositivos na rede, o que pode ser percebido como um ataque e esse tráfego ser intercetado com algumas ferramentas de análise tráfego de pacotes, regras de firewall, IDS e IPS.**
+
+
+
+
 
