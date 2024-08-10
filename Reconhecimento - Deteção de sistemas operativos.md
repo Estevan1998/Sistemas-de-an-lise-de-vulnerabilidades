@@ -34,10 +34,85 @@ segurança informática.**
 
 **Conforme ilustrado na figura abaixo,  usamos a ferramenta NMAP com o comando "nmap sP".**
 
+````html
+sudo nmap -sP 10.1.20.0/24
+````
+
 **É utilizado para realizar um ping sweep(é um método que pode estabelecer um intervalo de endereços IP que são mapeados para hosts ativos) na rede específica,onde "IP" é o endereço IP da rede que desejamos verificar. Esse comando envia um pacote ICMP Echo Request para cada IP na faixa especificada e aguarda pelas respostas para determinar quais hosts estão ativos na rede.**
 
 **No entanto, é importante ressaltar que esse 
 comando pode ser considerado intrusivo, pois ele envia pacotes para os dispositivos na rede, o que pode ser percebido como um ataque e esse tráfego ser intercetado com algumas ferramentas de análise tráfego de pacotes, regras de firewall, IDS e IPS.**
+
+
+**![N MAP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160350.png)**
+***
+
+## 2- ARP e MAC
+
+**Na figura abaixo, após utilizar o nmap, iremos utilizar o recurso da tabela ARP.** 
+
+**O comando "arp -a" é utilizado para mostrar a tabela ARP (Address Resolution Protocol) do sistema operacional. A tabela mapeia endereços IP para endereços MAC (Media Access Control) na rede local. Ao executar esse comando, veremos uma lista de todos os dispositivos que o sistema tem conhecimento, incluindo o nosso própriodispositivo, bem como outros dispositivos na rede local.**
+
+**Esta tabela é útil para identificar quais dispositivos estão presentes na rede local e para associar endereços IP a endereços MAC. No entanto, é importante ressaltar que essa tabela pode não incluir todos os dispositivos da rede, especialmente se eles não tiverem interagido recentemente com o nosso sistema.**
+
+**![ARP e MAC](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160415.png)**
+
+**Encontramos as máquinas com endereços 10.1.20.5, 10.1.20.6, 10.1.20.7, vamos prosseguir com a fase de reconhecimento, e reunir o máximo de informações possíveis sobre estes hosts.** 
+
+**Utilizaremos de novo a ferramenta nmap, com o comando ‘nmap -O -sV -sC’. 
+
+**Em resumo, ao usar o comando "nmap -O -sV -sC", fazemos uma varredura completa que inclui a deteção de sistemas operacionais, identificação de versões de serviços e execução de scripts para deteção de vulnerabilidades e enumeração de informações nos hosts alvos.**
+
+**![Opções](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20162226.png)**
+**
+**![Opções](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160415.png)**
+
+***
+
+## 3 - Enumeração de serviços na máquina 10.1.20.6 
+
+**O resultado do scan á máquina com o endereço 10.1.20.6 com sistema Ubuntu.**  
+
+**No resultado do nmap vamos prestar atenção aos serviços e versões e ver se as versões estão actualizadas para versão mais recente. Caso sejam versões desatualizadas, podemos procurar por exploits públicos para tentar comprometer o sistema. Outra alternativa, seria procurar por más configurações nos serviços listados e usá-los como vetor de ataque.**
+
+**Na máquina em questão, a porta 21 está associada ao serviço FTP (File Transfer Protocol), utilizando o servidor vsftpd Figura 4 – nmap scan às máquinas 
+versão 3.0.5, e seria de considerar o uso de FTPS (FTP seguro) para criptografar o tráfego 
+entre o cliente e o servidor FTP.**
+
+**A porta 22 está associada ao serviço SSH (Secure Shell), utilizando o servidor OpenSSH versão 9.6, uma boa prática seria configurar o SSH para utilizar chaves de autenticação em vez de senhas, se possível, e implementar medidas de segurança adicionais, como autenticação de dois fatores e controlo de tentativas de login.** 
+
+**A porta 80 está associada ao serviço HTTP, utilizando o servidor Apache HTTP versão 2.4.58, seria de considerar implementar práticas de segurança, como o uso de HTTPS em vez de HTTP para criptografar o tráfego e configurar adequadamente as permissões de arquivo e diretório para evitar a exposição de informações sensíveis. Algumas recomendações de boas práticas seria, atualizar para as versões mais recentes dos serviços, implementar regras de firewall para restringir o acesso às portas apenas a endereços IP autorizados.**
+**
+**![nmap scan às máquinas](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160442.png)**
+***
+## 4 - Enumeração de serviços na máquina 10.1.20.7 
+
+**Neste resultado, vamos seguir a mesma metodologia acima mencionada. 
+Aqui podemos verificar dois serviços  na máquina 10.1.20.7, diferentes da máquina 
+anterior.**
+
+````html
+sudo nmap -sP 10.1.20.7/24
+````
+
+**Neste resultado, vamos seguir a mesma metodologia acima mencionada. 
+Aqui podemos verificar dois serviços  na máquina 10.1.20.7, diferentes da máquina 
+anterior.**
+
+**O SimpleHTTPServer é uma ferramenta de desenvolvimento simples e não deve ser usada 
+em ambientes de produção devido a preocupações com segurança. Para hospedagem de 
+sites reais, é recomendável usar servidores HTTP mais robustos e seguros, como o Apache 
+HTTP Server ou o Nginx.**
+</br>
+**![nmap scan às máquinas](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160506.png)**
+***
+
+## 5- OS FingerPrinting 
+
+
+
+
+
 
 
 
