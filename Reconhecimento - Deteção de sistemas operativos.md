@@ -157,6 +157,76 @@ que se trata de um Linux Mint.**
 **![telnet](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160518.png)**
 ***
 
+## 7 - Captura de tráfego, detetando e identificando protocolos seguros e não seguros 
+
+**Os objetivos da captura de tráfego, deteção e identificação de protocolos seguros e não 
+seguros consiste em capturar o tráfego de rede que permite analisar o comportamento da 
+rede em tempo real. Isso pode ajudar a identificar atividades suspeitas, como 
+comunicações não autorizadas, tráfego malicioso ou tentativas de intrusão.**
+
+**Com isso conseguimos fazer uma análise de segurança e com captura de tráfego permite 
+analisar padrões de tráfego para identificar possíveis vulnerabilidades ou ameaças à 
+segurança da rede. Isso pode incluir a deteção de ataques de negação de serviço (DDoS), 
+tentativas de invasão, malware ou comunicações não criptografadas, entre muitas outras 
+funções.** 
+
+**Através da análise do tráfego capturado, é possível identificar os protocolos de 
+comunicação utilizados na rede e determinar se estão sendo implementadas práticas de 
+segurança adequadas. Isso inclui a identificação de protocolos seguros, como HTTPS, SSH 
+e VPNs, em contraste com protocolos não seguros, como HTTP, Telnet, FTP e outros.**
+
+**Em resumo, a captura de tráfego, deteção e identificação de protocolos seguros e não 
+seguros são componentes essenciais de uma estratégia de segurança de rede abrangente, 
+ajudando a proteger contra ameaças e garantir a integridade, confidencialidade e 
+disponibilidade dos dados na rede.**
+***
+
+## 8 - Telnet 
+
+**Neste primeiro teste, iremos realizar através da máquina Ubuntu (10.1.20.6) uma conexão 
+Telnet na máquina Linux Mint (10.1.20.7), e após a conexão, irá executar o comando “ls” 
+para listar os diretórios.**
+
+**Então vamos prosseguir e verificar se o Telnet é um protocolo 
+seguro ou inseguro, através da ferramenta WireShark no kali Linux (10.1.20.4 - M#2), que 
+irá ficar à escuta do tráfego como se fosse um atacante na rede.**
+
+**![telnet](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160726.png)**
+
+**Na máquina Kali Linux, podemos confirmar no wireshark com o filtro de telnet, 
+conseguimos capturar o tráfego entre a máquina 4 e 5 no Telnet.** 
+
+**Na máquina LinuxMint podemos ver também a ferramenta TCPDUMP a capturar o tráfego 
+da conexão Telnet, mas vamos continuar no wireshark para inspecionar de forma 
+minuciosa o conteúdo dos pacotes.**
+
+**Ao escolher um pacote listado no wireshark, ao utilizar a função de “Follow TCP Stream”, 
+podemos ver o conteúdo do pacote selecionado.**
+
+**E o que verificamos é que podemos “ver a Shell” da máquina Ubuntu ao efetuar login no 
+telnet e a password do sistema do LinuxMint. Neste cenário constámos que “mint” é o 
+utilizador e a password é “mint”. Podemos também perceber a execução do comando “ls” 
+escrito anteriormente.** 
+
+**![telnet](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160715.png)**
+
+**Com este teste, concluímos que o serviço Telnet utiliza protocolos inseguros de 
+transmissão de dados.**
+
+**O Telnet transmite dados, incluindo senhas, de forma não criptografada pela rede, o que 
+significa que qualquer pessoa que tenha acesso ao tráfego de rede pode intercetar e ler as 
+informações transmitidas. Isso torna o Telnet altamente vulnerável a ataques de 
+espionagem e intercetação de dados.**
+
+**Por esse motivo, é altamente recomendável evitar o uso do Telnet em favor de protocolos 
+mais seguros, como SSH (Secure Shell), que oferece criptografia de ponta a ponta para 
+comunicações remotas, garantindo a confidencialidade e a integridade dos dados 
+transmitidos pela rede.**
+
+**![telnet](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160726.png)**
+***
+
+
 
 
 
