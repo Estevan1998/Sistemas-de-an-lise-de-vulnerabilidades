@@ -226,6 +226,93 @@ transmitidos pela rede.**
 **![telnet](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160726.png)**
 ***
 
+## 9 - FTP
+
+**Através da máquina Ubuntu, vamos estabelecer conexão com a máquina LinuxMint, através do serviço FTP, e verificar se o FTP utiliza de facto protocolos seguros ou inseguros.**
+
+````html
+ftp 10.1.20.7
+````
+
+**![FTP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160739.png)**
+
+**No Kali Linux, verificamos com o filtro FTP no wireshark, e podemos sem grande esforço 
+perceber que temos uma tentativa falhada de conexão no servidor FTP, com o user 
+“demo” e senha “demo”, do qual o serviço retorna que o login está incorreto.**
+
+**![FTP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160749.png)**
+
+**Constatámos que o FTP utiliza protocolos inseguros e tradicionalmente não possui mecanismos robustos de autenticação. As credenciais são transmitidas em texto simples, tornando fácil para os invasores capturá-las e comprometer contas de utilizador.**
+
+**O FTP transmite dados, incluindo credenciais de login e conteúdo do arquivo, em texto simples, sem criptografia. Isso significa que qualquer pessoa com acesso à rede entre o cliente e o servidor pode intercetar e ler esses dados, incluindo senhas e informações confidenciais.** 
+
+**Devido a essas preocupações de segurança, é recomendável evitar o uso do FTP em favor de protocolos de transferência de arquivos mais seguros, como SFTP (SSH File Transfer Protocol), FTPS (FTP Secure), ou soluções baseadas na web com suporte a HTTPS, que oferecem criptografia e autenticação mais robustas.** 
+***
+
+## 10 - HTTP 
+
+**Para iniciar um servidor HTTP simples no Linux, usá-mos o módulo “http.server” do Python, que fornece uma maneira rápida de servir arquivos num diretório específico através do protocolo HTTP. No terminal Linux, executamos o comando: “python3 -m http.server”.** 
+
+**Vemos as requisições feitas ao nosso servidor na última linha, vemos o IP 10.1.20.4 da máquina kali Linux a fazer uma requisição “GET” no diretório “/Videos” com o protocolo “HTTP” com status “200”.** 
+
+**![HTTP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160803.png)**
+
+**Após feita a requisição, vamos analisar no wireshark, para verificar se realmente o protocolo HTTP é seguro.**
+
+**![HTTP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160812.png)**
+
+**Conforme podemos, ao aceder ao nosso servidor simples em python através do navegador, podemos ver o tráfego intercetado no wireshark com o filtro de pacotes “http”.** 
+
+**Vamos escolher o pacote n.363 onde é feito a requisição GET /Videos/ no protocolo HTTP 
+e utilizar a função “Follow HTTP Stream”.**
+
+**![HTTP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160834.png)**
+
+**E concluímos que o HTTP não criptografa os dados transmitidos entre o cliente e o servidor, o que significa que qualquer pessoa pode intercetar e ler as informações transmitidas. Isso torna o HTTP inadequado para o envio de dados sensíveis, como informações de login, números de cartão de crédito, etc.**
+
+**O HTTP não fornece mecanismos para garantir a integridade dos dados transmitidos. Isso significa que os dados podem ser modificados durante a transmissão sem que o cliente ou o servidor detetem.**
+
+**O HTTP não oferece autenticação robusta dos clientes ou dos servidores. Isso significa que é difícil garantir a identidade dos utilizadores e dos servidores com os quais estão se estão a comunicar.**
+
+**Em resumo, o HTTP é adequado para transferir dados que não são sensíveis e não requerem segurança adicional. No entanto, para aplicações que lidam com informações sensíveis ou que exigem um alto nível de segurança, é recomendado usar protocolos mais seguros, como HTTPS, que criptografam os dados e fornecem autenticação e integridade dos dados.** 
+
+***
+
+## 11 - SSH
+
+**De seguida, vamos fazer uma conexão SSH através da máquina Ubuntu para a máquina Mint, e quando a conexão estiver estabelecida, vamos criar 3 pastas com os nomes de “Ferramentas”, “Seguranca”, “Informatica”.**
+
+````html
+ssh mint@10.1.20.7
+````
+
+**![SSH](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160855.png)**
+
+**O objetivo é confirmar se vai ser possível analisar o tráfego da mesma maneira que os serviços anteriores e constatar se vamos puder ver as credenciais de login, ver o comando utilizado para criar as pastas igual ao serviço telnet que era possível ver o comando “ls” e ver o conteúdo dos pacotes desencriptados.**
+
+**Da mesma forma, no nosso kali Linux, na ferramenta wireshark, vemos o tráfego SSH com o filtro específico.**
+
+**![SSH](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160908.png)**
+
+**E por fim, vemos o conteúdo do pacote. E concluímos que está criptografado. O serviço SSH utiliza protocolos seguros e não conseguimos entender o que aconteceu nesta transmissão de dados.** 
+
+**![SSH](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160920.png)**
+
+**O SSH utiliza criptografia forte para proteger todas as comunicações entre o cliente e o servidor. Isso significa que qualquer informação transmitida através de uma conexão SSH é protegida contra intercetação.**
+
+**SSH suporta vários métodos de autenticação, incluindo senhas, chaves públicas e autenticação baseada em tokens. Esses métodos garantem que apenas utilizadores autorizados possam aceder o sistema.**
+
+**O SSH verifica automaticamente a integridade dos dados durante a transmissão, garantindo que eles não sejam modificados ou corrompidos durante o transporte.**
+
+**O SSH pode ser usado para criar túneis seguros que encapsulam outros protocolos, como FTP, HTTP, e VNC, tornando-os seguros para transmissão em redes não confiáveis.**
+
+**Além do acesso remoto, o SSH também suporta transferência de arquivos segura através do protocolo SCP (Secure Copy) ou SFTP (SSH File Transfer Protocol), fornecendo uma alternativa segura ao FTP tradicional.**
+
+**Em resumo, o SSH é uma escolha preferida para acesso remoto e transferência de arquivos em ambientes onde a segurança é uma preocupação, como em redes corporativas, data centers e ambientes de hospedagem na nuvem. A sua forte criptografia, autenticação segura e integridade dos dados tornam-se assim uma opção confiável para comunicações seguras em redes de computadores.** 
+
+
+
+
 
 
 
