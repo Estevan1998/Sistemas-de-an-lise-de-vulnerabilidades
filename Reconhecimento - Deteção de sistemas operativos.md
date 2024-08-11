@@ -11,7 +11,7 @@
 
 **No decorrer deste projeto, é proposto utilizar alguns serviços de fraca segurança para demonstrações educacionais de como podemos explorar sistemas através desses serviços, criando assim um ambiente de estudos para praticar as nossas competências em segurança informática.**
 
-**Para a realização da deteção de sistemas operativos e respetiva enumeração dos seus seviços colocou-se á prova 3 desafios:**
+Para a realização da deteção de sistemas operativos e respetiva enumeração dos seus seviços colocou-se á prova 3 desafios:
 
 * Deverá ser possível, a partir da M #2 a deteção dos sistemas operativos nas M #3, M #4 e M#5;
 * Documente os sistemas operativos e serviços em cada uma das máquinas;
@@ -21,9 +21,11 @@ seguros.
 
 **![Exemplo](https://github.com/Estevan1998/Sistemas-de-an-lise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-05%20172709.png)**
 
+Neste laboratório exprimental pode ser utilizados os seguintes dispositivos e máquinas virtuais:
+
 * A M# 1 será o vosso host físico (computador pessoal)
 * A M#5 será a vm “HackLAB: Vulnix”
-* A M#3 e M#4 poderão ser VMs ubuntu
+* A M#3 e M#4 poderão ser VMs Ubuntu ou Mint
 * Os IPs das máquinas 2,3 e 4 neste procedimento encontram-se na gama 10.1.20.0/24 
 
 ***
