@@ -1,5 +1,13 @@
 # Reconhecimento - Deteção de sistemas oprativos
 ***
+**Para a realização da deteção de sistemas operativos colocou-se á prova 3 desafios:**
+
+* Deverá ser possível, a partir da M #2 a deteção dos sistemas operativos nas M #3, M #4 e 
+M#5;
+* Documente os sistemas operativos e serviços em cada uma das máquinas;
+* Efetue capturas de tráfego, detetando e identificando protocolos seguros e protocolos não 
+seguros.
+
 
 **Na fase de reconhecimento, a deteção de sistemas operacionais é uma etapa crucial para 
 entender a topologia da rede alvo e identificar potenciais vulnerabilidades específicas do 
@@ -29,7 +37,14 @@ segurança informática.**
 
 
 **![Exemplo](https://github.com/Estevan1998/Sistemas-de-an-lise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-05%20172709.png)**
+
+* A M# 1 será o vosso host físico (computador pessoal)
+* A M#5 será a vm “HackLAB: Vulnix”
+* A M#3 e M#4 poderão ser VMs ubuntu
+* Os IPs das máquinas 2,3 e 4 neste procedimento encontram-se na gama 10.1.20.0/24 
+
 ***
+
 ## 1- N MAP
 
 **Conforme ilustrado na figura abaixo,  usamos a ferramenta NMAP com o comando "nmap sP".**
@@ -107,7 +122,41 @@ HTTP Server ou o Nginx.**
 **![nmap scan às máquinas](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160506.png)**
 ***
 
-## 5- OS FingerPrinting 
+## 5 - Enumeração de serviços na máquina 10.1.20.5 
+
+**O resultado do nmap á maquina 10.1.20.5 foi gigante, do qual não iremos colocar imagens 
+e sim em texto numa tabela para facilitar a leitura e organização para usar futuramente.**
+
+**![Enumeração de serviços na máquina 10.1.20.5 ](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160552.png)**
+**![Enumeração de serviços na máquina 10.1.20.5 ](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160603.png)**
+
+**Com tudo, o resultado do nmap apresentou outras portas e serviços. Iremos abaixo, 
+documentar as portas e serviços encontrados.**
+
+**![Enumeração de serviços na máquina 10.1.20.5 ](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160612.png)**
+**![Enumeração de serviços na máquina 10.1.20.5 ](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160623.png)**
+***
+
+## 6- OS FingerPrinting 
+
+**A técnica de utilizar a conexão Telnet para verificar o sistema operacional é chamada de 
+"fingerprinting" ou "OS fingerprinting".** 
+
+````html
+telnet 10.1.20.7
+````
+
+**Essa técnica envolve a análise do comportamento 
+do sistema durante uma conexão Telnet para determinar características específicas do 
+sistema operacional, como a versão, o tipo e outras informações relevantes.** 
+
+**Essas informações podem ser úteis para identificar vulnerabilidades específicas do sistema 
+operacional ou para fins de auditoria e segurança de rede. Na figura abaixo, constatámos 
+que se trata de um Linux Mint.**
+
+**![telnet](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-10%20160518.png)**
+***
+
 
 
 
