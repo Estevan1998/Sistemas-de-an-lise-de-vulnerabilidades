@@ -11,10 +11,9 @@
 
 **No decorrer deste projeto, é proposto utilizar alguns serviços de fraca segurança para demonstrações educacionais de como podemos explorar sistemas através desses serviços, criando assim um ambiente de estudos para praticar as nossas competências em segurança informática.**
 
-**Para a realização da deteção de sistemas operativos colocou-se á prova 3 desafios:**
+**Para a realização da deteção de sistemas operativos e respetiva enumeração dos seus seviços colocou-se á prova 3 desafios:**
 
-* Deverá ser possível, a partir da M #2 a deteção dos sistemas operativos nas M #3, M #4 e 
-M#5;
+* Deverá ser possível, a partir da M #2 a deteção dos sistemas operativos nas M #3, M #4 e M#5;
 * Documente os sistemas operativos e serviços em cada uma das máquinas;
 * Efetue capturas de tráfego, detetando e identificando protocolos seguros e protocolos não 
 seguros.
