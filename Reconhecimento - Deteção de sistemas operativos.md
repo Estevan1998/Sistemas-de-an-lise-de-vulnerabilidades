@@ -1,5 +1,4 @@
 # Reconhecimento - Deteção de sistemas oprativos
-***
 
 **Na fase de reconhecimento, a deteção de sistemas operacionais é uma etapa crucial para entender a topologia da rede alvo e identificar potenciais vulnerabilidades específicas do sistema operacional.** 
 
