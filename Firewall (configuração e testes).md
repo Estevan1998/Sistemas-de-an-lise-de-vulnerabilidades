@@ -189,3 +189,13 @@ sudo service apache2 start
 >Colocamos o endereço IP da interface WAN do pfsense que redireciona para a M#3:
 
 **![Regra](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_25.png)**
+
+**Por fim, verificamos o tráfego do servidor apache.**
+
+>Tráfego do servidor apache:
+
+**![Tráfego](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_26.png)**
+
+***
+
+# 7 - Configure uma regra que redirecione os pedidos à porta 80 da máquina 3 para a porta 80 da máquina 4.
