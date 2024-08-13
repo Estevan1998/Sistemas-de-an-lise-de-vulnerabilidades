@@ -36,7 +36,7 @@
 
 ***
 
-# 1 - Bloqueie o acesso SSH da M #3 à M #4 (tcp / porta 22). 
+## 1 - Bloqueie o acesso SSH da M #3 à M #4 (tcp / porta 22). 
 
 **Neste primeiro exemplo, dá-mos uma proposta de bloqueio do acesso SSH da M #3 á M #4 com o seguinte comando apresentado:**
 
@@ -54,7 +54,7 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 ***
 
-# 2 - Autorize todo o tráfego ICMP de toda a Rede externa à M #2. 
+## 2 - Autorize todo o tráfego ICMP de toda a Rede externa à M #2. 
 
 **Neste exemplo, criamos uma regra na interface WAN do PfSense que autoriza o tráfego ICMP de toda a rede externa à M #2**
 
@@ -80,7 +80,7 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 ***
 
-# 3 - Autorize acessos a pedidos DNS da M #3 à Internet (tcp e udp / porta 53).
+## 3 - Autorize acessos a pedidos DNS da M #3 à Internet (tcp e udp / porta 53).
 
 **Para autorizar acessos a pedido DNS da M #3 à Internet, criamos uma regra de acesso a esse pedido.**
 
@@ -100,7 +100,7 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 ***
 
-# 4 - Autorize acesso a pedidos HTTP e HTTPS da M #3 à Internet (tcp / porta 80 e porta 443).
+## 4 - Autorize acesso a pedidos HTTP e HTTPS da M #3 à Internet (tcp / porta 80 e porta 443).
 
 **Para autorizar acesso a pedidos HTTP e HTTPS da M #3 à internet, criamos uma regra no WAN do PfSense.
 
@@ -126,7 +126,7 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 ***
 
-# 5 - Autorize acesso a pedido SSH da M #1 à M #3 (tcp / porta 22).
+## 5 - Autorize acesso a pedido SSH da M #1 à M #3 (tcp / porta 22).
 
 **Neste exemplo, para autorizar o acesso a pedido SSH da M #1 à M #3, criamos a seguinte regra no WAN do PfSense para possibilitar esse acesso.**
 
@@ -152,7 +152,7 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 ***
 
-# 6 - Instale um serviço web na máquina 3. Autorize o acesso da rede externa a esse servidor web.
+## 6 - Instale um serviço web na máquina 3. Autorize o acesso da rede externa a esse servidor web.
 
 **Neste exemplo instalamos o serviço web apache2 na máquina M #3 para demonstração.**
 
@@ -198,7 +198,7 @@ sudo service apache2 start
 
 ***
 
-# 7 - Configure uma regra que redirecione os pedidos à porta 80 da máquina 3 para a porta 80 da máquina 4.
+## 7 - Configure uma regra que redirecione os pedidos à porta 80 da máquina 3 para a porta 80 da máquina 4.
 
 **Para este exemplo, criamos uma regra para redirecionar o tráfego para a M#4.**
 
@@ -214,7 +214,7 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destiantion 10
 
 ***
 
-# 8 - Crie uma DMZ. Escolha a localização e instale uma máquina virtual na DMZ com um serviço web. Documente, explicando a localização da DMZ.
+## 8 - Crie uma DMZ. Escolha a localização e instale uma máquina virtual na DMZ com um serviço web. Documente, explicando a localização da DMZ.
 
 **Criamos no pfsense uma nova interface com o nome de DMZ, com o endereço 172.100.100.2, que está fora da rede LAN (10.1.20.0/24) do pfsense, isolada.** 
 
@@ -228,7 +228,7 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destiantion 10
 
 ***
 
-# 9 - Crie uma regra na firewall que, se tentarmos aceder à mesma na porta 80, o tráfego seja redirecionado para o web server localizado na DMZ.
+## 9 - Crie uma regra na firewall que, se tentarmos aceder à mesma na porta 80, o tráfego seja redirecionado para o web server localizado na DMZ.
 
 **Neste exemplo, para criar uma regra na firewall que rederecione o tráfego para o web server localizado na DMZ, apresentamos a seguinte sugestão.**
 
