@@ -1,4 +1,4 @@
-## VPN (Instalação, Configuração e Testes)
+# VPN (Instalação, Configuração e Testes)
 
 **A Instalação e configuração de um serviço VPN garante muitas vantagens. Desde a nivel de configuração e preferencias na rede até á segurança a nivel de rede.**
 
@@ -29,6 +29,87 @@
 * Teste 2 - Externamente deveremos ter acesso utilizando a VPN somente ao serviço http na máquina 4; 
 
 ***
+
+## 1 - Instalação na máquina 2 um servidor de VPN.
+
+**Primeiramente, na interface WAN do PfSense, selecionamos a aba VPN> OpenVPN.**
+
+>VPN> OpenVPN:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_1.png)**
+
+>Prosseguimos em Wizard> :
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_2.png)**
+
+**De seguida, na figura abaixo, criamos um certificado de autorização.**
+
+>Certeficado:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_3.png)**
+
+>Selecionamos "Next":
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_4.png)**
+
+>Configuramos de acordo a nossa necessidade:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_5.png)**
+
+>Forçamos que o tráfego do cliente seja feito por túnel:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_6.png)**
+
+>Servidores de DNS:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_7.png)**
+
+>Habilitamos a comunicação entre clientes conectados neste servidor:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_9.png)**
+
+>E habilitamos a criação de regras automáticas na firewall para permitir o tráfego da VPN:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_10.png)**
+
+>Servidor VPN:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_11.png)**
+
+**De seguida instalamos o openvpn cliente.**
+
+>openvpn:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_12.png)**
+
+>Instalação a decorrer:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_13.png)**
+
+**Depois de ser concluída a instalação, vamos criar um utilizador para utilizar no cliente OpenVPN.** 
+
+>Cliente OpenVPN:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_14.png)**
+
+>Para concluir a criação do utilizador:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_15.png)**
+
+>Utilizador criado:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_16.png)**
+
+**Para finalizar, no utilizador criado, vamos exportar para a máquina host que queremos que tenha acesso 
+à rede via VPN.**
+
+>Exportação para a máquina host:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_17.png)**
+
+***
+
+## 2 - Configuração do cliente Windows (M #1) para aceder ao servidor VPN.
 
 
 
