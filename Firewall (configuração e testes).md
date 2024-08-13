@@ -57,9 +57,48 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 **Neste exemplo, criamos uma regra na interface WAN do PfSense que autoriza o tráfego ICMP de toda a rede externa à M #2**
 
->Resumo da regra para que seja permitido o tráfego ICMP na interface WAN do pfsense
+>Resumo da regra que permite o tráfego ICMP na interface WAN do pfsense:
 
 **![Tráfego ICMP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_3.png)**
 
-**
+>O endereço IP de origem do Host, que pode ser considerado rede externa, 192.168.1.89, com destino ao endereço WAN do pfsense. E habilitamos a opção de LOG, com o nome de ICMP externo.
+
+**![Tráfego ICMP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_4.png)**
+
+**De seguida, realizamos ping no powershell do HOST, com o endereço de IP do pfsense na interface WAN.**
+
+>Resultado da execução do Echo Request (ping):
+
+**![Tráfego ICMP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_5.png)**
+
+**Por fim, na figura abaixo, podemos verificar o resultado dos logs da regra criada anteriormente.**
+
+>Resultado dos Logs:
+
+**![Logs](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_6.png)**
+
+***
+
+# 3 - Autorize acessos a pedidos DNS da M #3 à Internet (tcp e udp / porta 53).
+
+**Para autorizar acessos a pedido DNS da M #3 à Internet, criamos uma regra de acesso a esse pedido**
+
+>Sugestão de regra de autorizção de acesso:
+
+**![DNS](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_7.png)**
+
+>Resultado da regra criada:
+
+**![DNS](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_8.png)**
+
+**Através dos logs da regra criada, vemos que a máquina 3 já tem acesso a pedidos DNS.**
+
+>Confirmação a partir dos LOGS:
+
+**![LOGS](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_9.png)**
+
+***
+
+# Autorize acesso a pedidos HTTP e HTTPS da M #3 à Internet (tcp / porta 80 e porta 443).
+
 
