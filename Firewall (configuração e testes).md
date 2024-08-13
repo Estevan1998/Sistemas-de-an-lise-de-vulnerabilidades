@@ -55,5 +55,11 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 # 2 - Autorize todo o tráfego ICMP de toda a Rede externa à M #2. 
 
+**Neste exemplo, criamos uma regra na interface WAN do PfSense que autoriza o tráfego ICMP de toda a rede externa à M #2**
 
+>Resumo da regra para que seja permitido o tráfego ICMP na interface WAN do pfsense
+
+**![Tráfego ICMP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_3.png)**
+
+**
 
