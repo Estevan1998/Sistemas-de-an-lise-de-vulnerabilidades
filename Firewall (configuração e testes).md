@@ -242,8 +242,7 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destiantion 10
 
 **![Regra](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_31.png)**
 
-**Após a criação da regra, acedemos via browser ao IP da interface wan que nos redireciona para o servidor web na 
-DMZ.
+**Após a criação da regra, acedemos via browser ao IP da interface wan que nos redireciona para o servidor web na DMZ.**
 
 >Redirecionamento para o servido web:
 
