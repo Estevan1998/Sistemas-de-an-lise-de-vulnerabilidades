@@ -37,7 +37,7 @@
 
 # 1 - Bloqueie o acesso SSH da M #3 à M #4 (tcp / porta 22). 
 
-**Neste primeiro exemplo, dá-mos uma proposta de bloqueio do acesso SSH da M #3 á M #4**
+**Neste primeiro exemplo, dá-mos uma proposta de bloqueio do acesso SSH da M #3 á M #4 com o seguinte comando apresentado:**
 
 ````html
 sudo ufw deny from 10.1.20.3 to any port 22
