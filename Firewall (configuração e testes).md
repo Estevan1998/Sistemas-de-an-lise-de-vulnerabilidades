@@ -206,8 +206,52 @@ sudo service apache2 start
 sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destiantion 10.1.20.4:80
 ````
 
-**Na figura abaixo, através do tcpdump podemos ver que recebemos o tráfego na M#4 através da M#3.**
+**Por fim,na figura abaixo, através do tcpdump podemos ver que recebemos o tráfego na M#4 através da M#3.**
 
 >Vizualização do tcpdump:
 
-**![tcpdump](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_26.png)**
+**![tcpdump](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_28.png)**
+
+***
+
+# 8 - Crie uma DMZ. Escolha a localização e instale uma máquina virtual na DMZ com um serviço web. Documente, explicando a localização da DMZ.
+
+**Criamos no pfsense uma nova interface com o nome de DMZ, com o endereço 172.100.100.2, que está fora da rede LAN (10.1.20.0/24) do pfsense, isolada.** 
+
+**A mesma está localizada desta maneira para a mesma, apenas servir o servidor web, proporcionando mais um layer de segurança à rede interna, garantindo que o tráfego da DMZ não tenha acesso direto aos recursos da rede interna, minimizando o risco de comprometimento caso a máquina na DMZ seja comprometida.**
+
+**Ao colocar o servidor web na DMZ, ele pode ser acedido por clientes externos à rede interna, ao mesmo tempo em que é mantido separado dos recursos sensíveis da rede interna.** 
+
+**Qualquer tráfego externo destinado ao servidor web na DMZ deve passar por uma firewall, o que permite a implementação de políticas de segurança específicas para proteger tanto a rede interna quanto a DMZ.** 
+
+**![DMZ](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_29.png)**
+
+***
+
+# 9 - Crie uma regra na firewall que, se tentarmos aceder à mesma na porta 80, o tráfego seja redirecionado para o web server localizado na DMZ.
+
+**Neste exemplo, para criar uma regra na firewall que rederecione o tráfego para o web server localizado na DMZ, apresentamos a seguinte sugestão.**
+
+>Iniciamos o serviço do apache:
+
+**![Service Start](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_30.png)**
+
+**De seguida, criamos a seguinte regra como abaixo representada.**
+
+>Regra de Port Forward:
+
+**![Regra](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_31.png)**
+
+**Após a criação da regra, acedemos via browser ao IP da interface wan que nos redireciona para o servidor web na 
+DMZ.
+
+>Redirecionamento para o servido web:
+
+**![Servidor web](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_32.png)**
+
+**Por fim, vizualizamos os registos Log do Apache.**
+
+>Registos Log:
+
+**![Registos Log](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_33.png)**
+
