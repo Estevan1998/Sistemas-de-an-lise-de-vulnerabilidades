@@ -81,7 +81,7 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 # 3 - Autorize acessos a pedidos DNS da M #3 à Internet (tcp e udp / porta 53).
 
-**Para autorizar acessos a pedido DNS da M #3 à Internet, criamos uma regra de acesso a esse pedido**
+**Para autorizar acessos a pedido DNS da M #3 à Internet, criamos uma regra de acesso a esse pedido.**
 
 >Sugestão de regra de autorizção de acesso:
 
