@@ -18,6 +18,7 @@
 * 6 - Instale um serviço web na máquina 3. Autorize o acesso da rede externa a esse servidor web.
 * 7 - Configure uma regra que redirecione os pedidos à porta 80 da máquina 3 para a porta 80 da máquina 4. 
 * 8 - Crie uma DMZ. Escolha a localização e instale uma máquina virtual na DMZ com um serviço web. Documente, explicando a localização da DMZ.
+* 9 - Crie uma regra na firewall que, se tentarmos aceder à mesma na porta 80, o tráfego seja redirecionado para o web server localizado na DMZ. 
 
 *** 
 
