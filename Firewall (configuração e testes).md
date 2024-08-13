@@ -8,7 +8,7 @@
 
 **Também permite a monitorização em tempo real do tráfego da rede. Uma mais valia para identificar comportamentos suspeitos ou for do comum no tráfegoi de rede**
 
-**A fim de demonstrar a aplicação e configuração deste sistema de análise de vulnerabilidades (Firewall), proposemos os seguintes desafios em que demonstramos, passo a passo separado em tópicos, as seguintes propostas:**
+**A fim de demonstrar a aplicação e configuração deste sistema de análise de vulnerabilidades (Firewall) de modo a demonstrar a possiblidades e opções oferecidas pela firewall, criamos os seguintes desafios e demonstramos, passo a passo separado em tópicos, as seguintes propostas:**
 
 * 1 - Bloqueie o acesso SSH da M #3 à M #4 (tcp / porta 22). 
 * 2 - Autorize todo o tráfego ICMP de toda a Rede externa à M #2. 
