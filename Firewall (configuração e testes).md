@@ -199,3 +199,15 @@ sudo service apache2 start
 ***
 
 # 7 - Configure uma regra que redirecione os pedidos à porta 80 da máquina 3 para a porta 80 da máquina 4.
+
+**Para este exemplo, criamos uma regra para redirecionar o tráfego para a M#4.**
+
+````html
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destiantion 10.1.20.4:80
+````
+
+**Na figura abaixo, através do tcpdump podemos ver que recebemos o tráfego na M#4 através da M#3.**
+
+>Vizualização do tcpdump:
+
+**![tcpdump](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_26.png)**
