@@ -37,5 +37,19 @@
 
 # 1 - Bloqueie o acesso SSH da M #3 à M #4 (tcp / porta 22). 
 
+**Neste primeiro exemplo, dá-mos uma proposta de bloqueio do acesso SSH da M #3 á M #4**
+
+**Como exemplificado na figura abaixo, criamos uma regra da firewall UFW, de origem do endereço IP 10.1.20.3 (mint) que bloqueia tráfego para a porta 22 (ssh).**
+
+**![Bloquear trafego porta 22 SSH](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_1.png)**
+
+**Na figura abaixo, o tcpdump declara o tráfego proveniente da máquina 10.1.20.3 mas que não é realizado e não permite estabelecer conexão.**
+
+**![tcpdump](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_2.png)**
+
+***
+
+# 2 - Autorize todo o tráfego ICMP de toda a Rede externa à M #2. 
+
 
 
