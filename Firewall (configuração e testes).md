@@ -99,6 +99,57 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 ***
 
-# Autorize acesso a pedidos HTTP e HTTPS da M #3 à Internet (tcp / porta 80 e porta 443).
+# 4 - Autorize acesso a pedidos HTTP e HTTPS da M #3 à Internet (tcp / porta 80 e porta 443).
 
+**Para autorizar acesso a pedidos HTTP e HTTPS da M #3 à internet, criamos uma regra no WAN do PfSense.
+
+>Regra criada:
+
+**![HTTP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_10.png)**
+
+>Resultado da regra criada:
+
+**![HTTP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_11.png)**
+
+**De seguida, através do navegador, criamos tráfego para o website nasa.gov.**
+
+>Exemplo do tráfego:
+
+**![HTTP](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_12.png)**
+
+**Com recurso ao comando ping, no website nasa.gov, vemos o endereço IP da mesma, e confirmamos nos LOGS da regra criada o tráfego gerado.**
+
+>Confirmação dos LOGS:
+
+**![LOGS](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_13.png)**
+
+***
+
+# 5 - Autorize acesso a pedido SSH da M #1 à M #3 (tcp / porta 22).
+
+**Neste exemplo, para autorizar o acesso a pedido SSH da M #1 à M #3, criamos a seguinte regra no WAN do PfSense para possibilitar esse acesso.**
+
+>Criamos a regra de Port Forward:
+
+**![SSH](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_14.png)**
+
+**Com recurso ao PuTTY colocamos o IP da interface WAN do pfsense.**
+
+>IP da WAN do PfSense:
+
+**![SSH](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_15.png)**
+
+>E conseguimos acesso via ssh à M#3:
+
+**![SSH](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_16.png)**
+
+**Por fim, com a implementação desta regra, foi possivel demonstrar a autorização do acesso a pedido SSH.**
+
+>Vizualização e confirmação da prova conceito:
+
+**![SSH](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_17.png)**
+
+***
+
+# 6 - Instale um serviço web na máquina 3. Autorize o acesso da rede externa a esse servidor web.
 
