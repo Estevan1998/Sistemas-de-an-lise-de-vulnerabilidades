@@ -154,3 +154,38 @@ sudo ufw deny from 10.1.20.3 to any port 22
 
 # 6 - Instale um serviço web na máquina 3. Autorize o acesso da rede externa a esse servidor web.
 
+**Neste exemplo instalamos o serviço web apache2 na máquina M #3 para demonstração.**
+
+>Instalação do apache2:
+
+**![apache2](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_20.png)**
+
+**Criamos a regra na ufw para permitir tráfego na porta 80 que é onde o apache vai ser servido.**
+
+````html
+sudo ufw allow 80/tcp
+````
+
+**![ufw](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_21.png)**
+
+**E por fim iniciamos o serviço  do apache.**
+
+````html
+sudo service apache2 start
+````
+
+**![apache2 start](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_22.png)**
+
+>Podemos vizualizar que temos acesso local ao apache.
+
+**![apache2 start](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_23.png)**
+
+**De seguida criamos uma regra Firewall/Nat/Port Forward**
+
+>Sugestão de regra:
+
+**![Regra](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_24.png)**
+
+>Colocamos o endereço IP da interface WAN do pfsense que redireciona para a M#3:
+
+**![Regra](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/firewall_25.png)**
