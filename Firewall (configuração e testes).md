@@ -1,12 +1,12 @@
 # Firewall (configuração e testes)
 
+**A configuração da firewall oferece enumeras vantagens como o controlo e definição de regras especificas afim de controlar o tráfego da rede. Também permite restringir e até bloquear tráfego indesejado**
+
+**Também permite a monitorização em tempo real do tráfego da rede. Uma mais valia para identificar comportamentos suspeitos ou for do comum no tráfego de rede**
+
 **Neste laboratório optou-se por colocar a máquina #2 (PfSense) como barreira na rede. Assim as máquinas na rede que queiram utilzar a internet, tem o seu tráfego todo a transitar pela a máquina #2. Esta opção foi decidida a fim de controlar todo o tráfego entre a rede externa e rede interna.**
 
 **Deste modo, no PfSense, utilizamos o sistema mais adequado de análise de vulnerabilidades e que também controla e permite verificar os protolcolos do tráfego. Esse sistema trata-se da Firewall.**
-
-**A configuração da firewall oferece enumeras vantagens como o controlo e definição de regras especificas afim de controlar o tráfego da rede. Também permite restringir e até bloquear tráfego indesejado**
-
-**Também permite a monitorização em tempo real do tráfego da rede. Uma mais valia para identificar comportamentos suspeitos ou for do comum no tráfegoi de rede**
 
 **A fim de demonstrar as possiblidades e opções oferecidas neste sistema de análise de vulnerabilidades (Firewall), criamos os seguintes desafios e demonstramos, passo a passo separado em tópicos, as seguintes propostas:**
 
