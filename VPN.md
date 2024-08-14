@@ -160,3 +160,9 @@ sessão com as credenciais do utilizador que criamos.
 
 **![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_24.png)**
 
+***
+
+**Para concluir, ao instalar e configurar servidor VPN, tivemos de lidar com questões com o objetivo de garantir um acesso seguro remoto á rede.** 
+
+**Após garantimos esse acesso chegamos á conclusão de que a VPN é muito importante na proteção de dados garantindo a integridade, segurança e confidencialidade nos processos de comunicação.**
+
