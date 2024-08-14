@@ -111,5 +111,52 @@
 
 ## 2 - Configuração do cliente Windows (M #1) para aceder ao servidor VPN.
 
+**Neste tópico, mostramos passo a passo a configuração do cliente Windows, máquina 1, para aceder ao servidor VPN.**
 
+**Primeiramente, abrimos o arquivo exportado através da função de importar no OpenVPN, e iniciamos 
+sessão com as credenciais do utilizador que criamos.
+
+>Início de sessão (OpenVPN):
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_18.png)**
+
+>Sessão criada no servidor VPN:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_19.png)**
+
+***
+
+## Teste 1 - Externamente deveremos ter acesso utilizando a VPN somente ao serviço ssh da máquina 3 e 4
+
+**Através do PuTTY, vamos criar conexão ssh à M#3**
+
+>Conexão SSH (PuTTY):
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_20.png)**
+
+**Conexão bem-sucedida, como podemos visualizar na figura abaixo**
+
+>Conexão estabelecida:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_21.png)**
+
+>Prova de conceito:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_22.png)**
+
+**Repetimos as operações, mas alteramos no PuTTY o endereço IP para o IP da M#4**
+
+>Alteração para o IP da M #4:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_23.png)**
+
+***
+
+## Teste 2 - Externamente deveremos ter acesso utilizando a VPN somente ao serviço http na máquina 4
+
+**Neste teste, conseguimos ter acesso ao servidor apache da M#4 e temos o resultado dos LOGS de requisições feitas ao servidor apache.**
+
+>Acesso ao servidor apache e resultado dos Logs:
+
+**![VPN](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/VPN_24.png)**
 
