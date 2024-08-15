@@ -88,7 +88,7 @@
 
 >Alertas no Snort:
 
-**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_9.png)**
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_10.png)**
 
 ***
 
@@ -100,19 +100,19 @@
 
 >Intudução da regra:
 
-**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_10.png)**
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_11.png)**
 
 **De seguida, com a ferramenta hping3 fazemos um ataque DoS na porta 80 da M#3.**
 
 >Ataque DoS (hping3):
 
-**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_11.png)**
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_12.png)**
 
 **Por fim, temos o alerta da regra customizada que criamos na figura abaixo.**
 
 >Alerta no Snort:
 
-**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_12.png)**
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_13.png)**
 
 ***
 
