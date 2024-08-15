@@ -50,7 +50,7 @@
 
 **![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_4.png)**
 
-**Realizamos o update das regras, este passo é muito importantes.**
+**Realizamos o update das regras, este passo é muito importante.**
 
 >Update das regras:
 
@@ -75,3 +75,11 @@
 ***
 
 ## 2 - Análise das assinaturas e dos alertas detetado
+
+**Neste tópico, para realizar a análise das assinaturas e dos alertas, geramos algum tráfego para obter os resultados.**
+
+**Primeiramente, utilizamos o nmap para fazer um scan na M #3 e na M #2 através do Kali Linux.**
+
+>NMAP á máquina #3:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_9.png)**
