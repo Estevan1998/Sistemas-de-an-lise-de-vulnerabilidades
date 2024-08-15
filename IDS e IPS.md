@@ -126,13 +126,13 @@
 
 **![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_14.png)**
 
-**De seguida geramos algum tráfego no browser com a palavra "Moscovo".
+**De seguida geramos algum tráfego no browser com a palavra "Moscovo".**
 
 >Pesquisa com a palavra "Moscovo":
 
 **![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_15.png)**
 
-**Por fim, vemos o nosso alerta customizado no Snort.
+**Por fim, vemos o nosso alerta customizado no Snort.**
 
 >Alerta no Snort:
 
