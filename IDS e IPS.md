@@ -4,7 +4,7 @@
 
 **Desta forma, existe na rede um ponto único para monitorizar comportamentos suspeitos ou fora do comum, com base em assinaturas de ataques conhecidos padrão como força bruta ou varreduras, a fim de alertar o administrador de rede sobre um possivel ataque na rede.**
 
-**Este sistema també atua como prevenção uma vez que pode atuar de forma automática no bloqueio de certo tráfego considerado suspeito**
+**Este sistema também atua como prevenção uma vez que pode atuar de forma automática no bloqueio de certo tráfego considerado suspeito. Para este laboratório, o IDS utilizado foi o Snort devido ao seu caracter Open Source e de fácil utilização para além de ser um sistema de deteção de intrusos gratuito.**
 
 **Para essa demonstração foi montado um laboratório com o seguinte esquema:**
 
@@ -16,3 +16,14 @@
 * Os IPs das máquinas 2,3,4 e 6 neste procedimento encontram-se na gama 10.1.20.0/24
 
 **![Exemplo](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Captura%20de%20ecr%C3%A3%202024-08-11%20202244.png)**
+
+**A fim de exemplificar, passo a passo, o processo de instalação e configuração do IDS/IPS, elaboramos este laboratório com os seguintes tópicos:**
+
+* 1 - Instalação do IDS/IPS (Snort)
+* 2 - Análise das assinaturas e dos alertas detetados
+* 3 - Configuração de um alerta para o ataque do tipo DoS
+* 4 - Configuração de um alerta para o acesso a uma página com referência à palavra “Moscovo” a partir das máquinas internas.
+
+***
+
+## 1 - Instalação do IDS/IPS (Snort)
