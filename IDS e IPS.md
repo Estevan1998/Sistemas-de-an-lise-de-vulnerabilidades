@@ -1,5 +1,11 @@
 # IDS/IPS (Instalação, Configuração e Testes)
 
+**A instalação de um IDS/IPS oferece muitas vantagens na segurança da rede. Para demonstrar essas vanatgens, foi instalado um sistema IDS/IPS numa máquina (PfSense) centralizada na rede. Desta forma todo o tráfego proveniente da internet que entre na rede interna com destino a outras máquinas na rede, tem de passar pelo sistema de deteção de intrusos instalado no PfSense**
+
+**Desta forma, existe na rede um ponto único para monitorizar comportamentos suspeitos ou fora do comum, com base em assinaturas de ataques conhecidos padrão como força bruta ou varreduras, a fim de alertar o administrador de rede sobre um possivel ataque na rede.**
+
+**Este sistema també atua como prevenção uma vez que pode atuar de forma automática no bloqueio de certo tráfego considerado suspeito**
+
 **Para essa demonstração foi montado um laboratório com o seguinte esquema:**
 
 * A M# 1 será o vosso host físico (computador pessoal)
