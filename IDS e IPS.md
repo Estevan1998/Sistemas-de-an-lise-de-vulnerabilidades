@@ -83,3 +83,40 @@
 >NMAP á máquina #3:
 
 **![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_9.png)**
+
+**No final, conseguimos ver alertas do Snort relativamente ao NMAP.** 
+
+>Alertas no Snort:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_9.png)**
+
+***
+
+## 3 - Configuração de um alerta para o ataque do tipo DoS
+
+**Para configurar um alerta para o atque do tipo DoS, criamos uma regra que gere ess alerta.**
+
+**Na interface WAN, em WAN rules, na categoria de custom.rules, inserimos a regra padrão**
+
+>Intudução da regra:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_10.png)**
+
+**De seguida, com a ferramenta hping3 fazemos um ataque DoS na porta 80 da M#3.**
+
+>Ataque DoS (hping3):
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_11.png)**
+
+**Por fim, temos o alerta da regra customizada que criamos na figura abaixo.**
+
+>Alerta no Snort:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_12.png)**
+
+***
+
+## 4 - Configuração de um alerta para o acesso a uma página com referência à palavra “Moscovo” a partir das máquinas internas. 
+
+
+
