@@ -27,3 +27,51 @@
 ***
 
 ## 1 - Instalação do IDS/IPS (Snort)
+
+**Para a realização da instalação do Snort é preciso entrar na interface WAN do PfSense. Após aceder á interface, através do Package Manager, vamos instalar o Snort.**
+
+>Inatalação do Snort:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_1.png)**
+
+**Depois de instalar, criamos conta no Snort, e puxamos o nosso Oinkcode para ter-mos acesso à API do snort e podemos apartir daí usufruir dos recursos.**
+
+>Criação da conta no Snort:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_2.png)**
+
+**De seguida passamos para a configuração do Snort**
+
+>Configuração:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_3.png)**
+
+>General Settings:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_4.png)**
+
+**Realizamos o update das regras, este passo é muito importantes.**
+
+>Update das regras:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_5.png)**
+
+**Bloquemos hosts que criarem um alerta e ativamos as regras.**
+
+>Bloqueio:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_6.png)**
+
+>Ativação das regras:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_7.png)**
+
+**Por fim, ativamos o Snort na interface do PfSense.**
+
+>Ativação do Snort:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_8.png)**
+
+***
+
+## 2 - Análise das assinaturas e dos alertas detetado
