@@ -118,5 +118,28 @@
 
 ## 4 - Configuração de um alerta para o acesso a uma página com referência à palavra “Moscovo” a partir das máquinas internas. 
 
+**Neste tópico, na interface WAN do PfSense, criamos uma regra desta vez na aba de LAN Rules.**
 
+**Esta regra vai faz com que seja emitido um alerta quando alguma máquina interna realize alguma pesquisa que contenha a palavra "Moscovo".**
 
+>LAN rules:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_14.png)**
+
+**De seguida geramos algum tráfego no browser com a palavra "Moscovo".
+
+>Pesquisa com a palavra "Moscovo":
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_15.png)**
+
+**Por fim, vemos o nosso alerta customizado no Snort.
+
+>Alerta no Snort:
+
+**![Snort](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/IDS_16.png)**
+
+***
+
+**Em suma, na implementação de um IDS/IPS, neste caso do Snort, conseguimos destacar que esta ferramenta é muito útil para criar e monitorizar alertas de ataques específicos tais como ataques DoS.** 
+
+**Com este tópico concluímos que o IDS é uma ferramenta muito importante na detenção de intrusos e de incidentes de segurança.**
