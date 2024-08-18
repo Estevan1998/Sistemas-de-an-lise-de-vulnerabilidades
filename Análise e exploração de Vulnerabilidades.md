@@ -73,6 +73,10 @@ sudo nmap -O -sV -sC 10.1.20.5
 
 **![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_3.png)**
 
+>Resultado enumeração:
+
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_4.png)**
+
 **Após obter a lista de utilizadores, voltamos a repetir o comando, mas com auxílio do comando grep e cut para filtrar nos resultados apenas o nome dos utilizadores e armazenar num ficheiro de texto, para criar uma automação para ser mais fácil de utilizar posteriormente.**
 
 * “| grep exists”
@@ -82,7 +86,7 @@ sudo nmap -O -sV -sC 10.1.20.5
 * “|”: Outro operador pipe que redireciona a saída do comando anterior para o próximo comando.
 * “cut -d " " -f2”: Utiliza o comando cut para dividir a linha em campos delimitados por espaço (-d " ") e seleciona o segundo campo (-f2), que é o nome de utilizador.
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_4.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_5.png)**
 
 ***
 
@@ -92,7 +96,7 @@ sudo nmap -O -sV -sC 10.1.20.5
 
 >Nome do serviço (Metasploit-framework):
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_5.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_6.png)**
 
 **O modulo número 10, Finger Service User Enumerator, é o que utilizamos para enumerar utilizadores.**
 
@@ -102,13 +106,13 @@ use 10
 
 >Utilização do modulo número 10
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_6.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_7.png)**
 
 **Encontramos os mesmos utilizadores, vistos anteriormente no serviço SMTP.**
 
 >Utilizadores encontrados:
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_7.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_8.png)**
 
 **O script finger-user-enum.pl utiliza o protocolo Finger para consultar o servidor e verificar a existência de utilizadores listados no arquivo. O protocolo Finger é uma ferramenta de rede que pode ser usada para obter informações sobre os utilizadores de um sistema.**
 
@@ -120,7 +124,7 @@ habilitado.**
 
 >perl finger-user-enum.pl -U:
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_8.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_9.png)**
 
 ***
 
@@ -130,7 +134,7 @@ habilitado.**
 
 >O qué o HYDRA:
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_9.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_10.png)**
 
 **Utilizamos o ficheiro vulnixUsers.txt, onde foi armazenado os utilizadores do scanner anterior de SMTP, e vamos utilizar uma lista de passwords chamada “rockyou” bastante conhecida e completa, para tentar quebrar as credenciais dos utilizadores.** 
 
@@ -140,7 +144,7 @@ hydra -l user /usr/share/wordlists/rockyou.txt 10.1.20.5 ssh -f -t4 -I
 
 >Utilização da lista de passwords "rockyou":
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_10.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_11.png)**
 
 **Confirmamos as credenciais do utilizador “user“com password “letmein”.**
 
@@ -152,7 +156,7 @@ ssh use@10.1.20.5
 
 >Conexão SSH:
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_11.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_12.png)**
 
 ***
 
