@@ -86,6 +86,58 @@ sudo nmap -O -sV -sC 10.1.20.5
 
 ***
 
+## 3 - Finger 
 
+**Através do metasploit, procuramos pelo nome do serviço.**
 
+>Nome do serviço (Metasploit-framework):
 
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_5.png)**
+
+**O modulo número 10, Finger Service User Enumerator, é o que utilizamos para enumerar utilizadores.**
+
+````html
+use 10
+````
+
+>Utilização do modulo número 10
+
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_6.png)**
+
+**Encontramos os mesmos utilizadores, vistos anteriormente no serviço SMTP.**
+
+>Utilizadores encontrados:
+
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_7.png)**
+
+**O script finger-user-enum.pl utiliza o protocolo Finger para consultar o servidor e verificar a existência de utilizadores listados no arquivo. O protocolo Finger é uma ferramenta de rede que pode ser usada para obter informações sobre os utilizadores de um sistema.**
+
+**A enumeração de utilizadores usando o protocolo Finger pode revelar informações 
+valiosas para um atacante, como a existência de contas de utilizadores, informações de 
+login e outros detalhes pessoais. Embora o protocolo Finger seja antigo e raramente usado 
+em sistemas modernos, alguns sistemas legados ainda podem ter o serviço Finger 
+habilitado.**
+
+>perl finger-user-enum.pl -U:
+
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_8.png)**
+
+***
+
+4 - HYDRA
+
+**Prosseguimos para força bruta com a ferramenta HYDRA.**
+
+>O qué o HYDRA:
+
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_9.png)**
+
+**Utilizamos o ficheiro vulnixUsers.txt, onde foi armazenado os utilizadores do scanner anterior de SMTP, e vamos utilizar uma lista de passwords chamada “rockyou” bastante conhecida e completa, para tentar quebrar as credenciais dos utilizadores.** 
+
+````html
+hydra -l user /usr/share/wordlists/rockyou.txt 10.1.20.5 ssh -f -t4 -I
+````
+
+>Utilização da lista de passwords "rockyou":
+
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_9.png)**
