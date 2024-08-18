@@ -140,4 +140,29 @@ hydra -l user /usr/share/wordlists/rockyou.txt 10.1.20.5 ssh -f -t4 -I
 
 >Utilização da lista de passwords "rockyou":
 
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_9.png)**
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_10.png)**
+
+**Confirmamos as credenciais do utilizador “user“com password “letmein”.**
+
+**Na figura abaixo verificamos a  conexão via SSH com as credenciais do utilizador.**
+
+````html
+ssh use@10.1.20.5
+````
+
+>Conexão SSH:
+
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_11.png)**
+
+***
+
+5 - Escalar previlégios
+
+**Escalar privilégios é o processo de obter acesso a níveis mais altos de autoridade ou 
+permissões num sistema, permitindo ao invasor realizar ações que normalmente não 
+seriam possíveis com suas credenciais iniciais.** 
+
+**Isso geralmente é feito explorando 
+vulnerabilidades ou falhas de segurança no sistema para ganhar controle sobre recursos 
+ou executar comandos com privilégios elevados.** 
+
