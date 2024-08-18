@@ -69,9 +69,9 @@ sudo nmap -O -sV -sC 10.1.20.5
 
 **É um comando SMTP (Simple Mail Transfer Protocol) usado para verificar a existência de um endereço de e-mail num servidor de e-mail. Quando enviamos o comando VRFY seguido de um endereço de email, o servidor SMTP responde informando se o endereço de e-mail é válido e existe no servidor.**
 
-> smtp-user-enum
-
-**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_3.png)**
+````html
+smtp-user-enum -M VRFY -U /usr/share/metasploit-framework/dat/wordlists/unix_users.txt -t 10.1.20.5
+````
 
 >Resultado enumeração:
 
