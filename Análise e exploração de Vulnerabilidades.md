@@ -156,7 +156,7 @@ ssh use@10.1.20.5
 
 ***
 
-5 - Escalar previlégios
+## 5 - Escalar previlégios
 
 **Escalar privilégios é o processo de obter acesso a níveis mais altos de autoridade ou 
 permissões num sistema, permitindo ao invasor realizar ações que normalmente não 
