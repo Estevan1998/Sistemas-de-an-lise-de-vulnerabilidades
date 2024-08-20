@@ -15,7 +15,7 @@
 
 ## Scan da rede (N MAP)
 
-**Primeiramnete, a fim de identificar o número de máquinas na rede e o seu respetivo sistema operativo, realizamos um scan da rede com auxílio da ferramnta NMAP. Neste passo já nos é revelado no enunciado que o endereço de rede é o 10.1.20.0/24.**
+**Primeiramenete, com o objetivo de identificar o número de máquinas na rede e o seu respetivo sistema operativo, realizamos um scan da rede com auxílio da ferramnta NMAP. Neste passo já nos é revelado no enunciado que o endereço de rede é o 10.1.20.0/24.**
 
 ````html
 sudo nmap -sP 10.1.20.0/24
