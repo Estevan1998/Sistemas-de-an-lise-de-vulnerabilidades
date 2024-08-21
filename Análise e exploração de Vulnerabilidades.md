@@ -214,6 +214,8 @@ username:x:1000:1000:User Name,,,:/home/username:/bin/bash
 
 **Por fim, o LinEnum.sh também identifica arquivos de interesse, como arquivos com permissões inadequadas, arquivos de configuração que podem conter informações sensíveis e logs históricos que podem revelar atividades suspeitas.**
 
+>LinEnum:
+
 **![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_14.png)**
 
 **Após execução do script, vamos obter imensa informação relevante.**
@@ -238,3 +240,44 @@ informação encontrada no sistema.**
 **![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_22.png)**
 
 **![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_23.png)**
+
+**Montamos depois no nosso sistema a pasta partilhada no diretório /home/vulnix no kali para ter acesso a pasta /mnt/vulnix para conseguir acesso ao sistema.**
+
+>Montagem da pasta partilhada:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_24.png)**
+
+**Entramos no utilizador vulnix para aceder ao sistema.**
+
+>Acesso ao sistema:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_25.png)**
+
+**De seguida, geramos uma chave publica de SSH.**
+
+>Chave SSH:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_26.png)**
+
+**Movemos essa chave para dentro da pasta .ssh e colocamos como autorized_keys.**
+
+>Colocação da chave dentro da pasta .ssh:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_27.png)**
+
+**Na figura abaixo, tentamos fazer conexão via SSH e tirar proveito das chaves que criamos anteriormente.**
+
+>Conexão via SSH:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_28.png)**
+
+**Conexão com sucesso, com o comando “sudo -ll” que é utilizado para listar as permissões 
+de sudo de um utilizador.**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_29.png)**
+
+````html
+sudo -ll 
+````
+
+
