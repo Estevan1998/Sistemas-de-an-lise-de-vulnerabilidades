@@ -191,4 +191,50 @@ username:x:1000:1000:User Name,,,:/home/username:/bin/bash
 ````
 
 * username: O nome do utilizador.
-* password: Uma marcação de senha. Tradicionalmente, este campo continha a senha criptografada do usuário, mas atualmente a maioria dos sistemas usa x ou *, e a senha real é armazenada no arquivo /etc/shadow, que é mais seguro. 
+* password: Uma marcação de senha. Tradicionalmente, este campo continha a senha criptografada do usuário, mas atualmente a maioria dos sistemas usa x ou *, e a senha real é armazenada no arquivo /etc/shadow, que é mais seguro.
+* UID: O User ID, um número único que identifica o usuário no sistema.
+* GID: O Group ID, um número que identifica o grupo principal do usuário.
+* GECOS: Um campo de comentários que pode conter o nome completo do utilizador e outras informações.
+* home directory: O diretório home do utilizador.
+* shell: O shell de login do utilizador, que é o programa executado após o login (geralmente /bin/bash ou /bin/sh).
+
+***
+
+## 6 - LinEnum 
+
+**Na figura abaixo fizemos a transferência do LinEnum.sh.**
+
+**O LinEnum.sh é um script usado por profissionais de segurança e pentesters para avaliar a segurança de sistemas Linux. Ele fornece uma análise detalhada do sistema, identificando vulnerabilidades e pontos fracos que podem ser explorados.**
+
+**Ele oferece uma ampla gama de funcionalidades, incluindo informações sobre o sistema, como a versão do kernel e a distribuição do sistema operacional, detalhes sobre hardware e configurações de rede.**
+
+**Além disso, o LinEnum.sh verifica informações de utilizadores e grupos, como contas de utilizador, senhas criptografadas e permissões de arquivos críticos. Ele também analisa configurações de serviços e processos, como serviços em execução, processos ativos e configurações de serviços como SSH.**
+
+**Em termos de segurança, o script realiza verificações de segurança, incluindo a análise de SUID/SGID, configurações de sudo e capacidades de binários.**
+
+**Por fim, o LinEnum.sh também identifica arquivos de interesse, como arquivos com permissões inadequadas, arquivos de configuração que podem conter informações sensíveis e logs históricos que podem revelar atividades suspeitas.**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_14.png)**
+
+**Após execução do script, vamos obter imensa informação relevante.**
+
+**Colocamos as imagens o mais próximas possíveis pois são várias em função da 
+informação encontrada no sistema.**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_15.png)**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_16.png)**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_17.png)**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_18.png)**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_19.png)**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_20.png)**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_21.png)**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_22.png)**
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_23.png)**
