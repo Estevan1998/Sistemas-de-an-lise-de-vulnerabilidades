@@ -274,10 +274,100 @@ informação encontrada no sistema.**
 **Conexão com sucesso, com o comando “sudo -ll” que é utilizado para listar as permissões 
 de sudo de um utilizador.**
 
-**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_29.png)**
-
 ````html
 sudo -ll 
 ````
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_29.png)**
+
+**Com base na saída fornecida, podemos concluir que o utilizador vulnix tem permissões 
+específicas de sudo.**
+
+**Pode executar o comando sudoedit no arquivo /etc/exports com privilégios de root.**
+
+**Não precisa fornecer a senha ao executar sudoedit /etc/exports.**
+
+**O arquivo /etc/exports é usado para configurar exportações de sistemas de arquivos via NFS. Ter acesso para editar este arquivo pode permitir ao utilizador vulnix modificar as configurações de exportação NFS, o que pode afetar a segurança e a configuração da rede.**
+
+**Permitir a execução do comando sudoedit /etc/exports sem senha (NOPASSWD) reduz a segurança, pois qualquer comprometimento da conta vulnix poderia resultar em mudanças não autorizadas no arquivo /etc/exports.**
+
+>/etc/exports:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_30.png)**
+
+**Visto que não precisamos de senha para alterar este ficheiro, vamos acrescentar /root para ter acesso ao root através do sistema de exportação e gravamos o ficheiro.** 
+
+>/root :
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_31.png)**
+
+**Após gravar o ficheiro necessitamos de dar reboot à máquina para as alterações surtir efeito.**
+
+**Contudo, para fazer reboot á máquina é necessário ter permissões root do qual ainda não temos.**
+
+>reboot:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_32.png)**
+
+**Então vamos tornar este cenário um pouco real e esgotar os recursos da máquina através de uma fork bomb obrigando o administrador a reiniciar a máquina.**
+
+>fork bomb:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_33.png)**
+
+**Este script, na figura abaixo representado, maximiza o consumo de recursos do sistema.**
+
+>fork bomb em funcionamento:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_34.png)**
+
+**Uma fork bomb funciona criando processos rapidamente, e cada novo processo cria mais processos, resultando num crescimento exponencial do número de processos.**
+
+**Isso rapidamente consome todos os recursos disponíveis do sistema. Em sistemas Linux, o OOM (Out of Memory) Killer pode entrar em ação quando a memória é consumida de forma total, terminando processos para libertar memória.**
+
+>Reinício da máquina:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_35.png)**
+
+**Como pretendido, figura abaixo, a máquina vulnix ficou sem recursos, obrigando o 
+administrador a reiniciar a máquina.**
+
+**O comando “showmount -e” é utilizado para exibir as exportações de sistemas de arquivos NFS (Network File System) disponíveis num servidor. Ele lista os diretórios que são compartilhados e quais clientes têm permissão para montá-los.**
+
+````html
+sudo showmount -e 
+````
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_36.png)**
+
+**Vemos que o diretório “/root” está exportado e pode ser montado por qualquer máquina.**
+
+**Com isso, vamos explorar vulnerabilidades a partir dos arquivos encontrados no diretório /root para obter privilégios administrativos.**
+
+**De seguida, criamos e montamos um novo sistema de exportação.**
+
+>Criação e montagem de um novo sistema de exportação:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_37.png)**
+
+**Na figura abaixo, utilizamos o comando para listar os diretórios e ficheiros no caminho que criamos anteriormente.**
+
+>Diretórios e ficheiros:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_38.png)**
+
+**Conseguimos perceber que existe o ficheiro trophy.txt com a nossa flag descrita pelo autor da máquina Vulnix.  Na figura abaixo, ligamo-nos via SSH no utilizador root.**
+
+>Ligação SSH (user root):
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_39.png)**
+
+**Por fim, na figura abixo,é visível que conseguimos explorar a máquina e obter a flag.
+
+>Obtenção da flag:
+
+**![LinEnum](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_40.png)**
+
+***
 
 
