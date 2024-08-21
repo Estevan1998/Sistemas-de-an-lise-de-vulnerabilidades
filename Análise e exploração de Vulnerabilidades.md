@@ -170,3 +170,25 @@ seriam possíveis com suas credenciais iniciais.**
 vulnerabilidades ou falhas de segurança no sistema para ganhar controle sobre recursos 
 ou executar comandos com privilégios elevados.** 
 
+***
+
+### /etc/passwd 
+
+**O comando cat /etc/passwd é usado para visualizar o conteúdo do arquivo /etc/passwd em sistemas Unix e Linux. Este arquivo é fundamental para gerir utilizadores no sistema.** 
+
+**![Metasploit](https://github.com/Estevan1998/Sistemas-de-analise-de-vulnerabilidades/blob/main/images/Vulnix_13.png)**
+
+**A linha vulnix:x:2008:2008::/home/vulnix:/bin/bash no arquivo /etc/passwd contém todas as informações necessárias para o sistema identificar e autenticar o utilizador vulnix, além de definir o seu ambiente de trabalho (diretório home e shell de login).**
+
+````html
+vulnix:x:2008:2008::/home/vulnix:/bin/bash
+````
+
+**Cada linha do arquivo /etc/passwd contém os seguintes campos:**
+
+````html
+username:x:1000:1000:User Name,,,:/home/username:/bin/bash 
+````
+
+* username: O nome do utilizador.
+* password: Uma marcação de senha. Tradicionalmente, este campo continha a senha criptografada do usuário, mas atualmente a maioria dos sistemas usa x ou *, e a senha real é armazenada no arquivo /etc/shadow, que é mais seguro. 
